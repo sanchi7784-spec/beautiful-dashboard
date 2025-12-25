@@ -5,6 +5,7 @@ import {
   MenuItem,
   MenuItems,
 } from '@headlessui/react'
+
 import {
   Bars3Icon,
   BellIcon,
@@ -14,7 +15,7 @@ import {
 
 export default function Header({ onMenuClick }) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-18 bg-black border-b border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 h-18 bg-red-900 border-b border-gray-200">
       <div className="flex h-full items-center justify-between px-4 lg:px-6">
 
         {/* LEFT */}
@@ -27,19 +28,19 @@ export default function Header({ onMenuClick }) {
           </button>
 
           <img
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-            className="h-7 w-7"
+            src="https://readygrocery.razinsoft.com/assets/logo.png"
+            className="h-15 w-30"
             alt="logo"
           />
         </div>
 
         {/* CENTER */}
-        <div className="hidden md:block w-full max-w-md">
+        {/* <div className="hidden md:block w-full max-w-md">
           <input
             placeholder="Search..."
-            className="w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-2 text-sm text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 outline-none"
+            className="w-full rounded-lg bg-red-800 border border-gray-200 px-4 py-2 text-sm text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 outline-none"
           />
-        </div>
+        </div> */}
 
         {/* RIGHT */}
         <div className="flex items-center gap-4">
