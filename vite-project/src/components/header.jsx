@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import {
   Menu,
   MenuButton,
@@ -14,8 +15,29 @@ import {
 } from '@heroicons/react/24/outline'
 
 export default function Header({ onMenuClick }) {
+  const [logoUrl, setLogoUrl] = useState('https://readygrocery.razinsoft.com/assets/logo.png')
+
+  useEffect(() => {
+    // Load logo from localStorage
+    const savedLogo = localStorage.getItem('dashboardLogo')
+    if (savedLogo) {
+      setLogoUrl(savedLogo)
+    }
+
+    // Listen for logo updates
+    const handleLogoUpdate = (event) => {
+      setLogoUrl(event.detail)
+    }
+
+    window.addEventListener('logoUpdated', handleLogoUpdate)
+
+    return () => {
+      window.removeEventListener('logoUpdated', handleLogoUpdate)
+    }
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-18 bg-red-900 border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 h-18 bg-red-900/20 backdrop-blur-md border-b border-gray-200/50">
       <div className="flex h-full items-center justify-between px-4 lg:px-6">
 
         {/* LEFT */}
@@ -28,7 +50,7 @@ export default function Header({ onMenuClick }) {
           </button>
 
           <img
-            src="https://readygrocery.razinsoft.com/assets/logo.png"
+            src={logoUrl}
             className="h-15 w-30"
             alt="logo"
           />

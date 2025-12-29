@@ -1,7 +1,7 @@
 export default function Home() {
   
   return (
-    <div className="bg-black py-24 sm:py-32 dark:bg-gray-900">
+    <div className=" py-24 sm:py-32 dark:bg-gray-900">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-white dark:text-indigo-400">Deploy faster</h2>
         <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl dark:text-white">

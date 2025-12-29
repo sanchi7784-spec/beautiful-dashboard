@@ -77,7 +77,7 @@ const addUser = () => {
 };
 
   return (
-    <div className="bg-black dark:bg-gray-900 shadow-xl rounded-2xl mt-20">
+    <div className=" dark:bg-gray-900 shadow-xl rounded-2xl mt-20">
  <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
   {/* Search Input */}
@@ -90,7 +90,7 @@ const addUser = () => {
       placeholder="Search users..."
       value={search}
       onChange={(e) => setSearch(e.target.value)}
-      className="w-full rounded-2xl bg-gradient-to-b from-black via-gray-900 to-black
+      className="w-full rounded-2xl 
                  border border-white/10
                  pl-11 pr-4 py-3 text-sm text-white
                  placeholder-gray-500
@@ -107,7 +107,7 @@ const addUser = () => {
   <button
     onClick={() => setOpenStatus(!openStatus)}
     className="flex w-full items-center justify-between rounded-2xl
-               bg-gradient-to-b from-black via-gray-900 to-black
+              
                border border-white/10 px-4 py-3 text-sm text-white
                hover:bg-white/5 transition"
   >
@@ -147,8 +147,8 @@ const addUser = () => {
   </div>
   <button
   onClick={() => setAddOpen(true)}
-  className="rounded-2xl bg-gradient-to-r from-gray-900 via-black to-gray-900 px-5 py-2.5 text-sm font-medium 
-             text-white hover:bg-blue-500 transition shadow-lg"
+  className="rounded-2xl border border-white/10 px-5 py-2.5 text-sm font-medium 
+             text-white hover:bg-white/10 transition shadow-lg"
 >
   + Add User
 </button>

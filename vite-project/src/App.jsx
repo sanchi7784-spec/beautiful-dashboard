@@ -13,6 +13,7 @@ import  BusinessSettings from './BusinessSetup/BusinessSetup';
 import TaxesUI from './BusinessSetup/Tax'
 import BusinessSetup from './BusinessSetup/BusinessSetup'
 import Deliverycharge from './BusinessSetup/Deliverycharge'
+import Logo from './logo/logo'
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +29,7 @@ function App() {
              <Route path='/business' element={<BusinessSettings />} />
              <Route path='/taxes' element={<TaxesUI />} />
               <Route path='/deliverycharge' element={<Deliverycharge />} />
+                 <Route path='/logo' element={<Logo />} />
         </Routes>
       </DashboardLayout>
     </BrowserRouter>
