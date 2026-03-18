@@ -162,15 +162,15 @@ const addUser = () => {
         
       </h2>
 
-     <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-xl">
+     <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-black/30 backdrop-blur-sm shadow-xl">
   <div className="overflow-x-auto">
     <table className="w-full border-collapse">
       
       {/* Table Head */}
       <thead>
-        <tr className="bg-gradient-to-r from-gray-900 via-black to-gray-900 
-                       text-xs uppercase tracking-wider text-gray-400 
-                       border-b border-white/10">
+        <tr className="bg-white/5 backdrop-blur-sm
+                       text-xs uppercase tracking-wider text-gray-300 
+                       border-b border-white/20">
           <th className="px-6 py-4 text-left font-medium">ID</th>
           <th className="px-6 py-4 text-left font-medium">User</th>
           <th className="px-6 py-4 text-left font-medium">Email</th>
@@ -185,8 +185,8 @@ const addUser = () => {
         {filteredUsers.map((user) => (
           <tr
             key={user.id}
-            className="group border-b border-white/5 
-                       hover:bg-white/[0.03] transition-all"
+            className="group border-b border-white/10 
+                       hover:bg-white/10 backdrop-blur-sm transition-all"
           >
             {/* ID */}
             <td className="px-6 py-4 text-sm text-gray-400">

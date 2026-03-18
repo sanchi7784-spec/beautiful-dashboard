@@ -1,14 +1,15 @@
 'use client'
 import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import Header from './header'
 import Sidebar from './sidebar'
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout({ onLogout }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-
+4
   return (
     <div className="min-h-screen bg-black text-gray-100 dashboard-background">
-      <Header onMenuClick={() => setSidebarOpen(true)} />
+      <Header onMenuClick={() => setSidebarOpen(true)} onLogout={onLogout} />
       <div className="flex h-[calc(100vh-1rem)] relative">
         <aside
           className={`
@@ -28,7 +29,7 @@ export default function DashboardLayout({ children }) {
           />
         )}
         <main className="flex-1 lg:ml-78 p-4 overflow-y-auto relative z-10">
-          {children}
+          <Outlet />
         </main>
       </div>
     </div>

@@ -117,7 +117,7 @@ function Categories() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 md:p-6 text-slate-200 mt-20">
+    <div className="min-h-screen  p-4 md:p-6 text-slate-200 mt-20">
       {/* Header */}
       <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
@@ -142,7 +142,7 @@ function Categories() {
             placeholder="Search categories..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-lg bg-gray-900 border border-white/10 px-4 py-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-blue-500/40"
+            className="w-full rounded-lg  backdrop-blur-sm border border-white/10 px-4 py-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-blue-500/40"
           />
           <Search
             size={18}
@@ -156,7 +156,7 @@ function Categories() {
         {filteredCategories.map((category) => (
           <div
             key={category.id}
-            className="bg-[#0f141c] rounded-xl border border-white/10 p-4 hover:border-white/20 transition-all"
+            className=" backdrop-blur-sm bg-black/30 rounded-xl border border-white/10 p-4 hover:border-white/20 transition-all"
           >
             {/* Category Image/Icon */}
             <div className="flex items-center justify-center w-full h-32 bg-gray-800/50 rounded-lg mb-4 overflow-hidden">

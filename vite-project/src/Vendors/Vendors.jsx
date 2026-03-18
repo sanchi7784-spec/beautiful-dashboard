@@ -156,7 +156,7 @@ function Vendors() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 md:p-6 mt-20 text-slate-200">
+    <div className="min-h-screen p-4 md:p-6 mt-20 text-slate-200">
       {/* Header */}
       <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
@@ -194,7 +194,7 @@ function Vendors() {
 
       {/* Table View */}
       {viewMode === "list" && (
-        <div className="bg-[#0f141c] rounded-lg border border-white/10 overflow-hidden">
+        <div className=" backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
           <table className="w-full">
             <thead className="bg-[#151b24] border-b border-white/10">
               <tr>
@@ -276,7 +276,7 @@ function Vendors() {
           {shops.map((shop) => (
             <div
               key={shop.id}
-              className="bg-[#0f141c] rounded-lg border border-white/10 p-4 hover:border-white/20 transition-all"
+              className=" backdrop-blur-sm bg-black/30 rounded-lg border border-white/10 p-4 hover:border-white/20 transition-all"
             >
               <div className="flex items-center justify-center w-full h-32 bg-gray-800/50 rounded-lg mb-4 overflow-hidden">
                 {shop.logo ? (

@@ -88,7 +88,7 @@ export default function BusinessSettings() {
   ];
 
   return (
-    <div className="min-h-screen bg-black mt-20 text-gray-100 p-4 md:p-8">
+    <div className="min-h-screen  mt-20 text-gray-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">
@@ -105,7 +105,7 @@ export default function BusinessSettings() {
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  : ' backdrop-blur-sm text-gray-300 hover:bg-gray-700'
               }`}
             >
               {tab.label}
@@ -117,7 +117,7 @@ export default function BusinessSettings() {
         {activeTab === 'basic' && (
           <div className="space-y-8">
             {/* Business Information */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <Briefcase className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Business Information</h2>
@@ -133,7 +133,7 @@ export default function BusinessSettings() {
                     type="text"
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3 backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
 
@@ -146,7 +146,7 @@ export default function BusinessSettings() {
                     type="email"
                     value={companyEmail}
                     onChange={(e) => setCompanyEmail(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
 
@@ -159,7 +159,7 @@ export default function BusinessSettings() {
                     type="tel"
                     value={companyPhone}
                     onChange={(e) => setCompanyPhone(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3 backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
               </div>
@@ -231,18 +231,18 @@ export default function BusinessSettings() {
                   <select 
                     value={timeZone}
                     onChange={(e) => setTimeZone(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   >
-                    <option>UTC/GMT +06:00 - Asia/Dhaka</option>
-                    <option>UTC/GMT +05:30 - Asia/Kolkata</option>
-                    <option>UTC/GMT +00:00 - UTC</option>
+                    <option className='bg-black'>UTC/GMT +06:00 - Asia/Dhaka</option>
+                    <option className='bg-black'>UTC/GMT +05:30 - Asia/Kolkata</option>
+                    <option className='bg-black'>UTC/GMT +00:00 - UTC</option>
                   </select>
                 </div>
               </div>
             </div>
 
             {/* Payment Method Setup */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <CreditCard className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Payment Method Setup</h2>
@@ -250,13 +250,8 @@ export default function BusinessSettings() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Cash on Delivery */}
-                <div className="relative bg-gray-800 border-2 border-green-500/30 rounded-xl p-6">
+                <div className="relative  backdrop-blur-sm border-2 border-green-500/30 rounded-xl p-6">
                   <div className="absolute top-4 right-4">
-                    <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
                   </div>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
@@ -282,13 +277,8 @@ export default function BusinessSettings() {
                 </div>
 
                 {/* Online Payment */}
-                <div className="relative bg-gray-800 border-2 border-green-500/30 rounded-xl p-6">
+                <div className="relative  backdrop-blur-sm border-2 border-green-500/30 rounded-xl p-6">
                   <div className="absolute top-4 right-4">
-                    <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
                   </div>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
@@ -321,7 +311,7 @@ export default function BusinessSettings() {
         {activeTab === 'shops' && (
           <div className="space-y-8">
             {/* Shop Setup */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <Store className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Shop Setup</h2>
@@ -329,13 +319,9 @@ export default function BusinessSettings() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* Commission */}
-                <div className="relative bg-gray-800 border-2 border-green-500/30 rounded-xl p-6">
+                <div className="relative  backdrop-blur-sm border-2 border-white/10 rounded-xl p-6">
                   <div className="absolute top-4 right-4">
-                    <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
+                    
                   </div>
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
@@ -360,30 +346,8 @@ export default function BusinessSettings() {
                   </div>
                 </div>
 
-                {/* Subscription */}
-                <div className="relative bg-gray-800 border-2 border-gray-700 rounded-xl p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                      <CreditCard className="w-6 h-6 text-blue-400" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-100">Subscription</h3>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-300">Disable</span>
-                    <button
-                      onClick={() => setSubscriptionEnabled(!subscriptionEnabled)}
-                      className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors ${
-                        subscriptionEnabled ? 'bg-red-500' : 'bg-gray-600'
-                      }`}
-                    >
-                      <span
-                        className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
-                          subscriptionEnabled ? 'translate-x-8' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                  </div>
-                </div>
+            
+             
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -397,7 +361,7 @@ export default function BusinessSettings() {
                       type="number"
                       value={commission}
                       onChange={(e) => setCommission(e.target.value)}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">%</span>
                   </div>
@@ -411,10 +375,10 @@ export default function BusinessSettings() {
                   <select 
                     value={commissionType}
                     onChange={(e) => setCommissionType(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   >
-                    <option>Percentage</option>
-                    <option>Fixed</option>
+                    <option className='bg-black'>Percentage</option>
+                    <option className='bg-black'>Fixed</option>
                   </select>
                 </div>
 
@@ -426,51 +390,19 @@ export default function BusinessSettings() {
                   <select 
                     value={commissionCharge}
                     onChange={(e) => setCommissionCharge(e.target.value)}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   >
-                    <option>Per Order</option>
-                    <option>Per Item</option>
+                    <option className='bg-black'>Per Order</option>
+                    <option className='bg-black'>Per Item</option>
                   </select>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="flex items-center justify-between py-3">
-                  <span className="text-gray-300 font-medium">Enable POS in Shop Panel</span>
-                  <button
-                    onClick={() => setPosEnabled(!posEnabled)}
-                    className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors ${
-                      posEnabled ? 'bg-red-500' : 'bg-gray-600'
-                    }`}
-                  >
-                    <span
-                      className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
-                        posEnabled ? 'translate-x-8' : 'translate-x-1'
-                      }`}
-                    />
-                  </button>
-                </div>
-
-                <div className="flex items-center justify-between py-3">
-                  <span className="text-gray-300 font-medium">Shop Registration</span>
-                  <button
-                    onClick={() => setShopRegistration(!shopRegistration)}
-                    className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors ${
-                      shopRegistration ? 'bg-red-500' : 'bg-gray-600'
-                    }`}
-                  >
-                    <span
-                      className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
-                        shopRegistration ? 'translate-x-8' : 'translate-x-1'
-                      }`}
-                    />
-                  </button>
-                </div>
-              </div>
+            
             </div>
 
             {/* Need Product Approval */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <Package className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Need Product Approval</h2>
@@ -510,7 +442,7 @@ export default function BusinessSettings() {
         {activeTab === 'withdraw' && (
           <div className="space-y-8">
             {/* Withdraw Setup */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <Wallet className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Withdraw Setup</h2>
@@ -527,7 +459,7 @@ export default function BusinessSettings() {
                     value={minWithdrawAmount}
                     onChange={(e) => setMinWithdrawAmount(e.target.value)}
                     placeholder="0"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
 
@@ -541,7 +473,7 @@ export default function BusinessSettings() {
                     value={maxWithdrawAmount}
                     onChange={(e) => setMaxWithdrawAmount(e.target.value)}
                     placeholder="Enter max amount"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   />
                 </div>
 
@@ -556,7 +488,7 @@ export default function BusinessSettings() {
                       value={minDayWithdrawRequest}
                       onChange={(e) => setMinDayWithdrawRequest(e.target.value)}
                       placeholder="Enter min day"
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      className="w-full px-4 py-3  backdrop-blur-sm border border-gray-700 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">Days</span>
                   </div>
@@ -565,7 +497,7 @@ export default function BusinessSettings() {
             </div>
 
             {/* Withdrawal Notes */}
-            <div className="bg-gray-900 rounded-xl p-6 md:p-8 border border-gray-800">
+            <div className=" backdrop-blur-sm rounded-xl p-6 md:p-8 border border-gray-800">
               <div className="flex items-center gap-3 mb-6">
                 <Wallet className="w-5 h-5 text-gray-400" />
                 <h2 className="text-xl font-semibold text-gray-100">Withdrawal Notes</h2>

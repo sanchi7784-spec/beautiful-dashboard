@@ -69,23 +69,23 @@ function Logo() {
   }
 
   return (
-    <div className="min-h-screen bg-black py-8 px-4 mt-20">
+    <div className="min-h-screen py-8 px-4 mt-20">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="bg-gray-800 rounded-lg shadow-sm p-6 mb-6 border border-gray-700">
+        <div className=" backdrop-blur-sm rounded-lg shadow-sm p-6 mb-6 border border-gray-700">
           <h1 className="text-3xl font-bold text-white mb-2">Logo Management</h1>
           <p className="text-gray-400">Update your website and dashboard logo</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Logo Preview */}
-          <div className="bg-gray-800 rounded-lg shadow-sm p-6 border border-gray-700">
+          <div className=" backdrop-blur-sm rounded-lg shadow-sm p-6 border border-gray-700">
             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
               <ImageIcon className="w-5 h-5" />
               Current Logo Preview
             </h2>
             
-            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 flex items-center justify-center bg-gray-700 min-h-[300px]">
+            <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 flex items-center justify-center  backdrop-blur-sm min-h-[300px]">
               {previewUrl ? (
                 <img 
                   src={previewUrl} 
@@ -123,7 +123,7 @@ function Logo() {
           </div>
 
           {/* Right Column - Upload Options */}
-          <div className="bg-gray-800 rounded-lg shadow-sm p-6 border border-gray-700">
+          <div className=" backdrop-blur-sm rounded-lg shadow-sm p-6 border border-gray-700">
             <h2 className="text-xl font-semibold text-white mb-4">Upload Method</h2>
 
             {/* Method Selection */}
@@ -133,7 +133,7 @@ function Logo() {
                 className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
                   uploadMethod === 'url'
                     ? 'bg-red-900 text-white'
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                    : ' backdrop-blur-sm text-gray-300 hover:bg-gray-600'
                 }`}
               >
                 <Link className="w-4 h-4" />
@@ -144,7 +144,7 @@ function Logo() {
                 className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
                   uploadMethod === 'file'
                     ? 'bg-red-900 text-white'
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                    : 'bg-gray-700/30 text-gray-300 hover:bg-gray-600'
                 }`}
               >
                 <Upload className="w-4 h-4" />
@@ -164,7 +164,7 @@ function Logo() {
                     value={inputUrl}
                     onChange={handleUrlChange}
                     placeholder="https://example.com/logo.png"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-900 focus:border-transparent outline-none placeholder-gray-400"
+                    className="w-full px-4 py-3  backdrop-blur-sm border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-900 focus:border-transparent outline-none placeholder-gray-400"
                   />
                   <p className="text-sm text-gray-400 mt-2">
                     Enter the URL of your logo image

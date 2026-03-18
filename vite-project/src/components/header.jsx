@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Menu,
   MenuButton,
@@ -14,7 +15,8 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline'
 
-export default function Header({ onMenuClick }) {
+export default function Header({ onMenuClick, onLogout }) {
+  const navigate = useNavigate()
   const [logoUrl, setLogoUrl] = useState('https://readygrocery.razinsoft.com/assets/logo.png')
 
   useEffect(() => {
@@ -82,7 +84,7 @@ export default function Header({ onMenuClick }) {
                 <MenuItem key={item}>
                   {({ active }) => (
                     <a
-                      href="#"
+                      href="/profile"
                       className={`block px-4 py-2 text-sm ${
                         active ? 'bg-gray-700 text-white' : 'text-gray-300'
                       }`}
@@ -95,14 +97,17 @@ export default function Header({ onMenuClick }) {
               <div className="my-1 h-px bg-gray-700" />
               <MenuItem>
                 {({ active }) => (
-                  <a
-                    href="#"
-                    className={`block px-4 py-2 text-sm text-red-400 ${
+                  <button
+                    onClick={() => {
+                      onLogout()
+                      navigate('/login')
+                    }}
+                    className={`block w-full text-left px-4 py-2 text-sm text-red-400 ${
                       active ? 'bg-gray-700' : ''
                     }`}
                   >
                     Logout
-                  </a>
+                  </button>
                 )}
               </MenuItem>
             </MenuItems>

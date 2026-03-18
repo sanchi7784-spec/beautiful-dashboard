@@ -72,7 +72,7 @@ function Profile() {
   const displayData = isEditing ? tempData : profileData;
 
   return (
-    <div className="min-h-screen bg-black p-4 md:p-6 mt-20 text-slate-200">
+    <div className="min-h-screen  p-4 md:p-6 mt-20 text-slate-200">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between">
@@ -113,7 +113,7 @@ function Profile() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Avatar & Quick Info */}
           <div className="lg:col-span-1">
-            <div className="bg-[#0f141c] rounded-xl border border-white/10 p-6">
+            <div className=" backdrop-blur-sm rounded-xl border border-white/10 p-6">
               {/* Avatar */}
               <div className="relative mb-6">
                 <div className="w-40 h-40 mx-auto rounded-full bg-gray-800 border-4 border-white/10 flex items-center justify-center overflow-hidden">
@@ -170,7 +170,7 @@ function Profile() {
           {/* Right Column - Detailed Info */}
           <div className="lg:col-span-2 space-y-6">
             {/* Personal Information */}
-            <div className="bg-[#0f141c] rounded-xl border border-white/10 p-6">
+            <div className=" backdrop-blur-sm rounded-xl border border-white/10 p-6">
               <h3 className="text-xl font-bold text-white mb-6 pb-3 border-b border-white/10">
                 Personal Information
               </h3>
@@ -208,7 +208,7 @@ function Profile() {
                       name="email"
                       value={tempData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 bg-gray-900 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
+                      className="w-full px-4 py-2.5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
                     />
                   ) : (
                     <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-900/50 border border-white/10 rounded-lg text-white">
@@ -326,7 +326,7 @@ function Profile() {
             </div>
 
             {/* Bio Section */}
-            <div className="bg-[#0f141c] rounded-xl border border-white/10 p-6">
+            <div className=" backdrop-blur-sm rounded-xl border border-white/10 p-6">
               <h3 className="text-xl font-bold text-white mb-6 pb-3 border-b border-white/10">
                 About Me
               </h3>

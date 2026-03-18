@@ -187,7 +187,7 @@ export default function OrdersList() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 md:p-6 text-slate-200 mt-20">
+    <div className="min-h-screen  p-4 md:p-6 text-slate-200 mt-20">
 
       {/* Filters */}
       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -222,9 +222,9 @@ export default function OrdersList() {
       <h2 className="mb-4 text-xl font-semibold">Orders List</h2>
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-xl border border-white/10 bg-[#0f141c]">
+      <div className="overflow-x-auto rounded-xl border border-white/20 bg-black/30 backdrop-blur-sm">
         <table className="min-w-full text-sm">
-          <thead className="bg-[#151b24] text-gray-400">
+          <thead className="bg-white/5 backdrop-blur-sm text-gray-300">
             <tr>
               <th className="px-4 py-3 text-left">Order ID</th>
               <th className="px-4 py-3 text-left">Order Date</th>
@@ -243,7 +243,7 @@ export default function OrdersList() {
             {orders.map((order, i) => (
               <tr
                 key={i}
-                className="border-t border-white/5 hover:bg-white/5"
+                className="border-t border-white/10 hover:bg-white/10 backdrop-blur-sm"
               >
                 <td className="px-4 py-3">{order.id}</td>
                 <td className="px-4 py-3">{order.date}</td>

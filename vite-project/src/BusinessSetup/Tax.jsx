@@ -85,7 +85,7 @@ const TaxesUI = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black p-6 text-white mt-20">
+    <div className="min-h-screen p-6 text-white mt-20">
       
       {/* Info Box */}
       <div className="mb-6 rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
@@ -118,7 +118,7 @@ const TaxesUI = () => {
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0f1620]">
+      <div className="overflow-hidden rounded-xl border border-white/10  backdrop-blur-sm">
         <table className="w-full text-left text-sm">
           <thead className="bg-white/5 text-gray-300">
             <tr>

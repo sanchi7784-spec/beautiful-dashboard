@@ -85,7 +85,7 @@ function Deliverycharge() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-6 text-white mt-20">
+    <div className="min-h-screen  p-6 text-white mt-20">
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-semibold">Manage Delivery Charge</h2>
@@ -100,9 +100,9 @@ function Deliverycharge() {
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-xl bg-gray-900 shadow-lg">
+      <div className="overflow-hidden rounded-xl  backdrop-blur-sm shadow-lg">
         <table className="w-full text-left text-sm">
-          <thead className="bg-gray-900 text-gray-200">
+          <thead className=" backdrop-blur-sm bg-black/30 text-gray-200">
             <tr>
               <th className="px-6 py-4 font-medium">SL</th>
               <th className="px-6 py-4 font-medium">Min. Order QTY</th>

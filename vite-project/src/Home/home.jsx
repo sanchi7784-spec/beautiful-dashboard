@@ -1,145 +1,218 @@
+import {PieChart, Pie, Cell, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { TrendingUp, Users, ShoppingCart, DollarSign, Package, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+
 export default function Home() {
-  
+  // Sample data for charts
+  const revenueData = [
+    { month: 'Jan', revenue: 4000, orders: 240 },
+    { month: 'Feb', revenue: 3000, orders: 198 },
+    { month: 'Mar', revenue: 5000, orders: 300 },
+    { month: 'Apr', revenue: 4500, orders: 278 },
+    { month: 'May', revenue: 6000, orders: 389 },
+    { month: 'Jun', revenue: 5500, orders: 349 },
+    { month: 'Jul', revenue: 7000, orders: 430 },
+  ];
+
+  const categoryData = [
+    { name: 'Electronics', value: 400, color: '#8b5cf6' },
+    { name: 'Clothing', value: 300, color: '#3b82f6' },
+    { name: 'Food', value: 200, color: '#10b981' },
+    { name: 'Books', value: 150, color: '#f59e0b' },
+    { name: 'Others', value: 100, color: '#ef4444' },
+  ];
+
+  const statsCards = [
+    { 
+      title: 'Total Revenue', 
+      value: '$45,231', 
+      change: '+12.5%', 
+      isPositive: true, 
+      icon: DollarSign,
+      color: 'from-purple-500/20 to-pink-500/20'
+    },
+    { 
+      title: 'Total Orders', 
+      value: '2,184', 
+      change: '+8.2%', 
+      isPositive: true, 
+      icon: ShoppingCart,
+      color: 'from-blue-500/20 to-cyan-500/20'
+    },
+    { 
+      title: 'Total Users', 
+      value: '1,426', 
+      change: '+23.5%', 
+      isPositive: true, 
+      icon: Users,
+      color: 'from-green-500/20 to-emerald-500/20'
+    },
+    { 
+      title: 'Products', 
+      value: '892', 
+      change: '-4.3%', 
+      isPositive: false, 
+      icon: Package,
+      color: 'from-orange-500/20 to-yellow-500/20'
+    },
+  ];
+
   return (
-    <div className=" py-24 sm:py-32 dark:bg-gray-900">
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center text-base/7 font-semibold text-white dark:text-indigo-400">Deploy faster</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl dark:text-white">
-          Everything you need to deploy your app
-        </p>
-        <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-4xl dark:bg-gray-800" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center dark:text-white">
-                  Mobile friendly
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center dark:text-gray-400">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-                </p>
-              </div>
-              <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
-                <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl dark:shadow-none dark:outline dark:outline-white/20">
-                  <img
-                    alt=""
-                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
-                    className="size-full object-cover object-top"
-                  />
+    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8 mt-20">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
+            <TrendingUp className="w-10 h-10 text-purple-400" />
+            Dashboard Analytics
+          </h1>
+          <p className="text-gray-300 text-lg">Monitor your business performance in real-time</p>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {statsCards.map((stat, index) => (
+            <div 
+              key={index}
+              className={`backdrop-blur-xl bg-gradient-to-br ${stat.color} rounded-2xl p-6 shadow-2xl hover:scale-105 transition-transform duration-300`}
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="bg-white/10 backdrop-blur-sm p-3 rounded-xl">
+                  <stat.icon className="w-6 h-6 text-white" />
+                </div>
+                <div className={`flex items-center gap-1 text-sm font-semibold ${stat.isPositive ? 'text-green-400' : 'text-red-400'}`}>
+                  {stat.isPositive ? <ArrowUpRight className="w-4 h-4" /> : <ArrowDownRight className="w-4 h-4" />}
+                  {stat.change}
                 </div>
               </div>
+              <div>
+                <p className="text-gray-300 text-sm font-medium mb-1">{stat.title}</p>
+                <p className="text-white text-3xl font-bold">{stat.value}</p>
+              </div>
             </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 lg:rounded-l-4xl dark:outline-white/15" />
+          ))}
+        </div>
+
+        {/* Charts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          {/* Revenue Chart */}
+          <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-6 shadow-2xl">
+            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-purple-400" />
+              Revenue & Orders Trend
+            </h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={revenueData}>
+                <defs>
+                  <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.1}/>
+                  </linearGradient>
+                  <linearGradient id="colorOrders" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0.1}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                <XAxis dataKey="month" stroke="#ffffff" style={{ fontSize: '12px' }} />
+                <YAxis stroke="#ffffff" style={{ fontSize: '12px' }} />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'rgba(0,0,0,0.8)', 
+                    borderRadius: '8px',
+                    backdropFilter: 'blur(10px)'
+                  }} 
+                />
+                <Area type="monotone" dataKey="revenue" stroke="#8b5cf6" strokeWidth={3} fillOpacity={1} fill="url(#colorRevenue)" />
+                <Area type="monotone" dataKey="orders" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorOrders)" />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
-          <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl dark:bg-gray-800" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center dark:text-white">
-                  Performance
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center dark:text-gray-400">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.
-                </p>
-              </div>
-              <div className="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
-                  className="w-full max-lg:max-w-xs dark:hidden"
+
+          {/* Pie Chart */}
+          <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-6 shadow-2xl">
+            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <Package className="w-5 h-5 text-purple-400" />
+              Sales by Category
+            </h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={categoryData}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  outerRadius={100}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {categoryData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Pie>
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'rgba(0,0,0,0.8)', 
+                    borderRadius: '8px',
+                    backdropFilter: 'blur(10px)'
+                  }} 
                 />
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png"
-                  className="w-full not-dark:hidden max-lg:max-w-xs"
-                />
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl dark:outline-white/15" />
+              </PieChart>
+            </ResponsiveContainer>
           </div>
-          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px rounded-lg bg-white dark:bg-gray-800" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center dark:text-white">
-                  Security
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center dark:text-gray-400">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.
-                </p>
-              </div>
-              <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
-                  className="h-[min(152px,40cqw)] object-cover dark:hidden"
-                />
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png"
-                  className="h-[min(152px,40cqw)] object-cover not-dark:hidden"
-                />
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 dark:outline-white/15" />
+        </div>
+
+        {/* Bar Chart - Full Width */}
+        <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-6 shadow-2xl">
+          <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+            <ShoppingCart className="w-5 h-5 text-purple-400" />
+            Monthly Performance Comparison
+          </h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={revenueData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+              <XAxis dataKey="month" stroke="#ffffff" style={{ fontSize: '12px' }} />
+              <YAxis stroke="#ffffff" style={{ fontSize: '12px' }} />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: 'rgba(0,0,0,0.8)', 
+                  borderRadius: '8px',
+                  backdropFilter: 'blur(10px)'
+                }} 
+              />
+              <Legend />
+              <Bar dataKey="revenue" fill="#8b5cf6" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="orders" fill="#3b82f6" radius={[8, 8, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Additional Stats Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          <div className="backdrop-blur-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl p-6 shadow-2xl">
+            <h4 className="text-gray-300 text-sm font-medium mb-2">Average Order Value</h4>
+            <p className="text-white text-3xl font-bold mb-2">$124.50</p>
+            <p className="text-green-400 text-sm font-semibold flex items-center gap-1">
+              <ArrowUpRight className="w-4 h-4" /> +15.3% from last month
+            </p>
           </div>
-          <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-r-4xl dark:bg-gray-800" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center dark:text-white">
-                  Powerful APIs
-                </p>
-                <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center dark:text-gray-400">
-                  Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.
-                </p>
-              </div>
-              <div className="relative min-h-120 w-full grow">
-                <div className="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl outline outline-white/10 dark:bg-gray-900/60 dark:shadow-none">
-                  <div className="flex bg-gray-900 outline outline-white/5">
-                    <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
-                      <div className="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">
-                        NotificationSetting.jsx
-                      </div>
-                      <div className="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
-                    </div>
-                  </div>
-<div className="px-6 pt-6 pb-14">
-  <pre className="bg-gray-900 text-gray-100 rounded-xl p-5 overflow-x-auto text-sm no-scrollbar">
-    <code>
-{`function greet(name) {
-  return \`Hello, \${name}!
-  import { useState } from 'react'
-import { Switch } from '@headlessui/react'
-
-function Example() {
-	const [enabled, setEnabled] = useState(true)
-
-	return (
-		<form action="/notification-settings" method="post">
-			<Switch checked={enabled} onChange={setEnabled} name="notifications">
-				{/* ... */}
-			</Switch>
-			<button>Submit</button>
-		</form>
-	)
-}
-  
-  \`
-  ;
-}`}
-    </code>
-  </pre>
-</div>
-
-
-                </div>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-r-4xl dark:outline-white/15" />
+          <div className="backdrop-blur-xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl p-6 shadow-2xl">
+            <h4 className="text-gray-300 text-sm font-medium mb-2">Conversion Rate</h4>
+            <p className="text-white text-3xl font-bold mb-2">3.24%</p>
+            <p className="text-green-400 text-sm font-semibold flex items-center gap-1">
+              <ArrowUpRight className="w-4 h-4" /> +0.8% from last month
+            </p>
+          </div>
+          <div className="backdrop-blur-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl p-6 shadow-2xl">
+            <h4 className="text-gray-300 text-sm font-medium mb-2">Customer Satisfaction</h4>
+            <p className="text-white text-3xl font-bold mb-2">4.8/5.0</p>
+            <p className="text-green-400 text-sm font-semibold flex items-center gap-1">
+              <ArrowUpRight className="w-4 h-4" /> +0.3 from last month
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
+

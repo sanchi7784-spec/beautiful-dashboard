@@ -137,7 +137,7 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black p-4 sm:p-6 lg:p-8 mt-20">
+    <div className="min-h-screen p-4 sm:p-6 lg:p-8 mt-20">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -151,7 +151,7 @@ const Products = () => {
             </div>
             <button
               onClick={openAdd}
-              className="group relative px-6 py-3 rounded-xl bg-gradient-to-b from-black via-gray-900 to-black
+              className="group relative px-6 py-3 rounded-xl
                          text-white font-medium shadow-lg 
                          hover:scale-105 border border-white/15
                          transition-all duration-300 flex items-center gap-2"
@@ -163,7 +163,7 @@ const Products = () => {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 border  border-white/15 rounded-xl">
-            <div className="bg-black rounded-2xl p-5 shadow-sm  ">
+            <div className=" backdrop-blur-sm rounded-2xl p-5 shadow-sm  ">
               <div className="flex items-center justify-between  border-white/15 border p-5 rounded-2xl">
                 <div>
                   <p className="text-sm text-slate-200 font-medium">Total Products</p>
@@ -177,7 +177,7 @@ const Products = () => {
               </div>
             </div>
             
-            <div className="bg-black rounded-2xl p-5 shadow-sm  ">
+            <div className=" backdrop-blur-sm rounded-2xl p-5 shadow-sm  ">
               <div className="flex items-center justify-between border-white/15 border p-5 rounded-2xl">
                 <div>
                   <p className="text-sm text-slate-200 font-medium">Active Filters</p>
@@ -193,7 +193,7 @@ const Products = () => {
               </div>
             </div>
             
-            <div className="bg-black rounded-2xl p-5 shadow-sm  ">
+            <div className=" backdrop-blur-sm rounded-2xl p-5 shadow-sm  ">
               <div className="flex items-center justify-between border-white/15 border p-5 rounded-2xl">
                 <div>
                   <p className="text-sm text-slate-200 font-medium">Results Found</p>
@@ -209,7 +209,7 @@ const Products = () => {
           </div>
 
           {/* Filters Section */}
-          <div className="bg-black to-black rounded-2xl p-5 shadow-sm border border-white/15 ">
+          <div className=" rounded-2xl p-5 shadow-sm border border-white/15  backdrop-blur-sm ">
             <div className="flex flex-col lg:flex-row gap-4">
               
               {/* Search */}
@@ -222,7 +222,7 @@ const Products = () => {
                   placeholder="Search products..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-xl bg-gradient-to-b from-black via-gray-900 to-black
+                  className="w-full pl-12 pr-4 py-3 rounded-xl 
                              text-slate-900 placeholder-slate-400 border border-white/15
                              focus:outline-none focus:ring-2 focus:ring-blue-100/50 focus:-transparent
                              transition-all text-white"
@@ -235,7 +235,7 @@ const Products = () => {
                   value={discountFilter}
                   onChange={(e) => setDiscountFilter(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl  -slate-200 border border-white/15
-                             text-slate-200 bg-gradient-to-b from-black via-gray-900 to-black
+                             text-slate-200 
                              focus:outline-none focus:ring-2 focus:ring-blue-100/50 focus:-transparent
                              transition-all cursor-pointer"
                 >
@@ -252,7 +252,7 @@ const Products = () => {
                   value={priceRange}
                   onChange={(e) => setPriceRange(e.target.value)}
                   className="w-full px-4 py-3 rounded-xl 
-                             text-slate-900 bg-gradient-to-b from-black via-gray-900 to-black
+                             text-slate-900 
                              focus:outline-none focus:ring-2 focus:ring-blue-100/20 border border-white/15 focus:-transparent
                              transition-all cursor-pointer text-white"
                 >
@@ -267,13 +267,13 @@ const Products = () => {
         </div>
 
         {/* Products Table */}
-        <div className="bg-black rounded-2xl shadow-sm overflow-hidden">
+        <div className="bg-black/30 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-white/20">
           <div className="overflow-x-auto">
             <table className="w-full">
               
               {/* Table Head */}
               <thead>
-                <tr className="bg-gradient-to-r from-slate-50 to-blue-50 -b -slate-200">
+                <tr className="bg-white/5 backdrop-blur-sm border-b border-white/20">
                   <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">ID</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Product</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-slate-700 uppercase tracking-wider">Description</th>
@@ -285,7 +285,7 @@ const Products = () => {
               </thead>
 
               {/* Table Body */}
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-white/10">
                 {filteredProducts.length === 0 ? (
                   <tr>
                     <td colSpan="7" className="px-6 py-16 text-center">
@@ -304,7 +304,7 @@ const Products = () => {
                   filteredProducts.map((product, index) => (
                     <tr
                       key={product.id}
-                      className="hover:bg-gray-900 transition-colors"
+                      className="hover:bg-white/10 backdrop-blur-sm transition-colors"
                     >
                       {/* ID */}
                       <td className="px-6 py-4">
